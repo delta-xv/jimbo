@@ -14,10 +14,10 @@ Play offline after installation, in portrait or landscape. The current APK is a 
 
 ## Screenshots
 
-![Landscape gameplay with Jokers, scoring panels, and playing cards](docs/images/game-landscape.png)
+![Landscape gameplay with Jokers, scoring panels, and playing cards](docs/images/game-landscape-en.jpg)
 
 <p align="center">
-  <img src="docs/images/game-portrait.png" width="320" alt="Portrait gameplay showing the score, Jokers, hand, and action buttons">
+  <img src="docs/images/game-portrait-en.jpg" width="320" alt="Portrait gameplay showing the score, Jokers, hand, and action buttons">
 </p>
 
 ## Features

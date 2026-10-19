@@ -14,10 +14,10 @@
 
 ## 游戏画面
 
-![横屏牌局：小丑牌、计分区和手牌](docs/images/game-landscape.png)
+![横屏牌局：小丑牌、计分区和手牌](docs/images/game-landscape.jpg)
 
 <p align="center">
-  <img src="docs/images/game-portrait.png" width="320" alt="竖屏牌局，完整展示状态、小丑牌、手牌和操作按钮">
+  <img src="docs/images/game-portrait.jpg" width="320" alt="竖屏牌局，完整展示状态、小丑牌、手牌和操作按钮">
 </p>
 
 ## 已实现的玩法
