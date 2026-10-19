@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Jimbo</string>
+    <string name="title_activity_main">Jimbo</string>
+    <string name="package_name">com.jimbo.game</string>
+    <string name="custom_url_scheme">com.jimbo.game</string>
+</resources>

@@ -1,0 +1,687 @@
+.welcome-tools {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+.welcome-tools button {
+  min-height: 32px;
+  padding: 5px 10px;
+  border: 1px solid #52716a;
+  border-bottom-width: 3px;
+  border-radius: 4px;
+  background: #173e43;
+  color: #eee1bd;
+  font-size: 12px;
+}
+.tutorial-entry {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+.tutorial-entry small {
+  color: #b8cbb7;
+  font-size: 10px;
+}
+.welcome-tools .tutorial-entry.is-new {
+  border-color: #c7ad71;
+  background: #31544b;
+}
+:root .game-shell .tutorial-dialog {
+  width: min(720px, calc(100vw - 24px));
+  height: min(600px, calc(100dvh - 24px));
+  max-height: calc(100dvh - 24px);
+  max-width: calc(100vw - 24px);
+  padding: 18px;
+  overflow: hidden;
+}
+:root .game-shell .tutorial-dialog[open] {
+  display: flex;
+  flex-direction: column;
+}
+.tutorial-dialog .modal-heading {
+  margin: 0;
+  padding-bottom: 8px;
+  flex: none;
+  border-bottom: 1px solid #66887866;
+}
+.tutorial-dialog .modal-heading h2 {
+  font-size: 22px;
+  line-height: 1.1;
+}
+.tutorial-dialog .modal-heading .icon-button {
+  width: 28px;
+  height: 28px;
+  min-height: 28px;
+  font-size: 23px;
+}
+.tutorial-content {
+  min-height: 0;
+  flex: 1;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 12px;
+  padding-top: 10px;
+}
+.tutorial-step-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.tutorial-progress {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.tutorial-progress li {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #627d73;
+  border-radius: 3px;
+  color: #8aa697;
+  text-align: center;
+  font: 20px/20px var(--pixel);
+}
+.tutorial-progress li.active {
+  color: #163b3c;
+  background: #e2c78a;
+  border-color: #e2c78a;
+}
+.tutorial-progress li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 1px;
+  top: 10px;
+  right: -13px;
+  background: #627d73;
+}
+.tutorial-progress .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.tutorial-count {
+  font: 19px var(--pixel);
+  color: #c9d9bb;
+}
+.tutorial-page {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.tutorial-page h3 {
+  margin: 0;
+  font-size: 23px;
+  line-height: 1.25;
+  color: #f5d995;
+  outline: none;
+}
+.tutorial-copy,
+.tutorial-note {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #d4e1c9;
+}
+.tutorial-note {
+  color: #b9cfba;
+}
+.tutorial-illustration {
+  flex: 1;
+  min-height: 0;
+  max-height: 250px;
+  width: 100%;
+  border: 1px solid #557b6b;
+  border-radius: 6px;
+  background: #0b2b32bb;
+  padding: 14px;
+}
+.tutorial-goal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+.tutorial-example-label {
+  text-align: center;
+  font-size: 10px;
+  color: #99b6a4;
+}
+.tutorial-score-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.tutorial-score-grid > div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 7px;
+  border: 2px solid #4b7283;
+  border-radius: 5px;
+  background: #0a2733;
+}
+.tutorial-score-grid .tutorial-target {
+  background: #943e34;
+  border-color: #f0a577;
+}
+.tutorial-score-grid span {
+  font-size: 12px;
+  color: #e6e9c8;
+}
+.tutorial-score-grid strong {
+  font-size: 51px;
+  line-height: 1;
+  color: #fff1cd;
+}
+.tutorial-progress-track {
+  height: 7px;
+  border-radius: 2px;
+  background: #254b4d;
+  overflow: hidden;
+}
+.tutorial-progress-track span {
+  display: block;
+  width: 60%;
+  height: 100%;
+  background: #82c5a1;
+}
+.tutorial-hands {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+.tutorial-hands strong {
+  font-size: 25px;
+  color: #86c9ee;
+}
+.tutorial-example-note {
+  text-align: center;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #dfcb96;
+}
+.tutorial-practice {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+}
+.tutorial-practice-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 11px;
+  color: #b9d2bb;
+}
+.tutorial-practice-stats b {
+  margin-left: 5px;
+  color: #f2d88f;
+  font-size: 24px;
+}
+.tutorial-hand {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  width: min(100%, 340px);
+  margin: 0 auto;
+  padding-top: 8px;
+}
+:root .game-shell .tutorial-dialog .playing-card {
+  width: 100%;
+  height: 110px;
+  max-height: none;
+  max-width: none;
+  min-height: 0;
+  padding: 0;
+  aspect-ratio: auto;
+  transform: none;
+}
+:root .game-shell .tutorial-dialog .playing-card.selected {
+  transform: translateY(-6px);
+}
+.tutorial-practice-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9px;
+  min-height: 36px;
+}
+.tutorial-practice-actions p {
+  margin: 0;
+  color: #e7d299;
+  font-size: 12px;
+  line-height: 1.35;
+}
+:root .game-shell .tutorial-dialog .tutorial-play {
+  flex: none;
+  min-height: 34px;
+  font-size: 14px;
+  padding: 5px 16px;
+}
+.tutorial-retry {
+  background: transparent;
+  border: 0;
+  color: #9ecde4;
+  text-decoration: underline;
+  font-size: 12px;
+  padding: 6px;
+  white-space: nowrap;
+}
+.tutorial-shop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+.tutorial-shop-flow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.tutorial-shop-flow li {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 7px 3px;
+  border: 1px solid #648977;
+  border-radius: 3px;
+  color: #e7d199;
+  font-size: 12px;
+  line-height: 1.3;
+  text-align: center;
+}
+.tutorial-shop-flow li:not(:last-child)::after {
+  content: "›";
+  position: absolute;
+  right: -11px;
+  font-size: 20px;
+  color: #b8cbab;
+}
+.tutorial-joker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
+.tutorial-joker .joker-art {
+  flex: none;
+  width: 76px;
+  height: 109px;
+}
+.tutorial-joker > div:last-child {
+  max-width: 265px;
+}
+.tutorial-joker strong {
+  color: #f5d995;
+  font-size: 15px;
+}
+.tutorial-joker p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #c0d5bd;
+  margin: 7px 0 0;
+}
+.tutorial-penalty {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 9px;
+  border-left: 3px solid #dc9d72;
+  background: #76493733;
+}
+.tutorial-penalty b {
+  color: #edb987;
+  font: 25px var(--pixel);
+}
+.tutorial-footer {
+  border-top: 1px solid #66887866;
+  padding-top: 8px;
+}
+.tutorial-footer > p {
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.3;
+  color: #98b4a3;
+  margin: 0 0 7px;
+}
+.tutorial-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+:root .game-shell .tutorial-nav .button {
+  font-size: 13px;
+  min-width: 72px;
+  min-height: 36px;
+  padding: 5px 12px;
+}
+.tutorial-skip {
+  color: #b3c8b5;
+  font-size: 12px;
+  background: transparent;
+  border: 0;
+  padding: 7px 8px;
+}
+.tutorial-dialog.tutorial-motion .tutorial-page {
+  animation: tutorial-page-in calc(160ms * var(--motion-scale)) ease-out both;
+}
+@keyframes tutorial-page-in {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (max-width: 420px) {
+  :root .game-shell .tutorial-dialog {
+    padding: 12px;
+  }
+  .tutorial-content {
+    gap: 9px;
+  }
+  .tutorial-page {
+    gap: 8px;
+  }
+  .tutorial-page h3 {
+    font-size: 20px;
+  }
+  .tutorial-copy,
+  .tutorial-note {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  .tutorial-illustration {
+    padding: 10px;
+  }
+  .tutorial-joker {
+    gap: 12px;
+  }
+  .tutorial-joker .joker-art {
+    width: 64px;
+    height: 92px;
+  }
+  .tutorial-joker strong {
+    font-size: 13px;
+  }
+  .tutorial-joker p {
+    font-size: 12px;
+  }
+  :root .game-shell .tutorial-dialog .playing-card {
+    height: 100px;
+  }
+  .welcome-tools {
+    margin-top: 7px;
+  }
+  .welcome-tools button {
+    font-size: 11px;
+    padding: 4px 7px;
+    min-height: 28px;
+  }
+  .tutorial-entry {
+    gap: 5px;
+  }
+  .tutorial-entry small {
+    font-size: 9px;
+  }
+}
+@media (orientation: landscape) and (max-height: 600px) {
+  :root .game-shell .tutorial-dialog {
+    padding: 10px 14px;
+  }
+  .tutorial-dialog .modal-heading {
+    padding-bottom: 5px;
+  }
+  .tutorial-dialog .modal-heading h2 {
+    font-size: 19px;
+  }
+  .tutorial-content {
+    padding-top: 5px;
+    gap: 6px;
+  }
+  .tutorial-step-heading {
+    height: 18px;
+  }
+  .tutorial-progress li {
+    width: 18px;
+    height: 18px;
+    font-size: 17px;
+    line-height: 16px;
+  }
+  .tutorial-progress li:not(:last-child)::after {
+    top: 8px;
+  }
+  .tutorial-page {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    grid-template-rows: auto auto minmax(0, 1fr);
+    gap: 7px 15px;
+    align-items: start;
+  }
+  .tutorial-page h3 {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 20px;
+  }
+  .tutorial-copy {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .tutorial-note {
+    grid-column: 1;
+    grid-row: 3;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+  .tutorial-illustration {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    align-self: stretch;
+    height: 100%;
+    padding: 8px;
+  }
+  .tutorial-goal {
+    gap: 4px;
+  }
+  .tutorial-score-grid strong {
+    font-size: 32px;
+  }
+  .tutorial-score-grid > div {
+    padding: 3px;
+  }
+  .tutorial-hands strong {
+    font-size: 18px;
+  }
+  .tutorial-example-label {
+    display: none;
+  }
+  .tutorial-example-note {
+    font-size: 10px;
+  }
+  .tutorial-practice {
+    gap: 3px;
+  }
+  .tutorial-practice-stats {
+    font-size: 10px;
+  }
+  .tutorial-practice-stats b {
+    font-size: 18px;
+  }
+  .tutorial-hand {
+    max-width: 280px;
+    gap: 6px;
+    padding-top: 5px;
+  }
+  :root .game-shell .tutorial-dialog .playing-card {
+    height: clamp(54px, 19vh, 84px);
+  }
+  .tutorial-practice-actions {
+    min-height: 26px;
+  }
+  .tutorial-practice-actions p {
+    font-size: 10px;
+  }
+  :root .game-shell .tutorial-dialog .tutorial-play {
+    min-height: 25px;
+    font-size: 11px;
+    padding: 2px 12px;
+  }
+  .tutorial-shop {
+    gap: 8px;
+  }
+  .tutorial-shop-flow li {
+    font-size: 10px;
+    padding: 4px 2px;
+  }
+  .tutorial-joker {
+    gap: 10px;
+  }
+  .tutorial-joker .joker-art {
+    width: 45px;
+    height: 64px;
+  }
+  .tutorial-joker strong {
+    font-size: 12px;
+  }
+  .tutorial-joker p {
+    font-size: 11px;
+    line-height: 1.3;
+    margin-top: 4px;
+  }
+  .tutorial-footer {
+    padding-top: 5px;
+  }
+  .tutorial-footer > p {
+    margin-bottom: 4px;
+    font-size: 9px;
+  }
+  :root .game-shell .tutorial-nav .button {
+    min-height: 29px;
+    font-size: 12px;
+    padding: 3px 10px;
+  }
+}
+@media (orientation: landscape) and (max-height: 310px) {
+  .tutorial-page {
+    gap: 4px 12px;
+  }
+  .tutorial-page h3 {
+    font-size: 17px;
+  }
+  .tutorial-copy,
+  .tutorial-note {
+    font-size: 10px;
+    line-height: 1.3;
+  }
+  .tutorial-illustration {
+    padding: 5px;
+  }
+  .tutorial-score-grid strong {
+    font-size: 25px;
+  }
+  .tutorial-score-grid span {
+    font-size: 10px;
+  }
+  .tutorial-hands {
+    font-size: 10px;
+  }
+  .tutorial-progress-track {
+    height: 4px;
+  }
+  .tutorial-practice-stats b {
+    font-size: 16px;
+  }
+  .tutorial-practice-actions p {
+    font-size: 9px;
+  }
+  .tutorial-penalty {
+    padding: 4px 6px;
+  }
+  .tutorial-joker .joker-art {
+    width: 35px;
+    height: 50px;
+  }
+  .tutorial-joker strong {
+    font-size: 11px;
+  }
+  .tutorial-joker p {
+    font-size: 10px;
+  }
+  .welcome-tools {
+    margin-top: 6px;
+  }
+  .welcome-tools button {
+    min-height: 26px;
+    padding: 3px 7px;
+    font-size: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tutorial-dialog .tutorial-page {
+    animation: none !important;
+  }
+}
+@media (orientation: landscape) and (max-height: 310px) {
+  .tutorial-practice {
+    padding: 3px;
+    gap: 2px;
+  }
+  .tutorial-practice-stats {
+    font-size: 9px;
+    line-height: 1;
+  }
+  .tutorial-practice-stats b {
+    font-size: 14px;
+    line-height: 1;
+  }
+  .tutorial-hand {
+    padding-top: 4px;
+  }
+  :root .game-shell .tutorial-dialog .playing-card {
+    height: 48px;
+  }
+  .tutorial-practice-actions {
+    min-height: 22px;
+  }
+  :root .game-shell .tutorial-dialog .tutorial-play {
+    min-height: 22px;
+    font-size: 10px;
+    padding: 2px 8px;
+  }
+  .tutorial-retry {
+    padding: 2px 6px;
+    font-size: 10px;
+  }
+}
+:root .game-shell .welcome-tools .tutorial-entry small {
+  margin: 0;
+  font-size: 10px;
+}
+@media (orientation: landscape) and (max-height: 310px) {
+  :root .game-shell .welcome > small {
+    margin-top: 5px;
+  }
+}

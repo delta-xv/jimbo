@@ -1,0 +1,1053 @@
+.target-suit-badge {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #143b3b;
+  border: 1px solid #f3dba0;
+  color: #ffe4ab;
+  font-size: 16px;
+  line-height: 1;
+}
+.offer-meta {
+  min-width: 0;
+  width: 100%;
+  text-align: center;
+}
+.offer-details {
+  border: 0;
+  background: transparent;
+  color: #a9d6ef;
+  padding: 4px 8px;
+  min-height: 28px;
+  font-size: 11px;
+  text-decoration: underline;
+}
+.offer-meta .joker-status {
+  font-size: 11px;
+  line-height: 1.4;
+  margin: 5px 0;
+  color: #f6d58e;
+}
+@media (max-width: 760px), (orientation: landscape) and (max-height: 600px) {
+  :root .game-shell {
+    --rack-height: clamp(66px, 12dvh, 102px);
+    --hand-height: clamp(102px, 20dvh, 160px);
+    height: 100dvh;
+    min-height: 0;
+    width: 100%;
+    min-width: 0;
+    padding: max(8px, env(safe-area-inset-top))
+      max(8px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom))
+      max(8px, env(safe-area-inset-left));
+    gap: 8px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+  :root .game-shell .sidebar {
+    min-height: 0;
+    min-width: 0;
+    gap: 6px;
+  }
+  :root .game-shell .brand {
+    padding: 0;
+  }
+  :root .game-shell .brand h1 {
+    font-size: 36px;
+    line-height: 1;
+    letter-spacing: 2px;
+  }
+  :root .game-shell .brand h1 span {
+    font-size: 23px;
+    vertical-align: 1px;
+  }
+  :root .game-shell .side-actions {
+    gap: 5px;
+  }
+  :root .game-shell .side-actions button {
+    min-height: 28px;
+    height: 28px;
+    min-width: 28px;
+    padding: 2px 4px;
+    font-size: 16px;
+  }
+  :root .game-shell .side-actions button span {
+    display: none;
+  }
+  :root .game-shell .run-panel {
+    padding: 5px;
+    gap: 4px;
+  }
+  :root .game-shell .round-label {
+    padding-left: 0;
+    gap: 2px;
+  }
+  :root .game-shell .progression-label {
+    font-size: 9px;
+    line-height: 1.1;
+  }
+  :root .game-shell .progression-label strong {
+    font-size: 17px;
+  }
+  :root .game-shell .progression-label .pixel {
+    font-size: 15px;
+  }
+  :root .game-shell .target-panel {
+    padding: 4px 1px 2px;
+  }
+  :root .game-shell .target-panel > span {
+    font-size: 9px;
+    letter-spacing: 0;
+  }
+  :root .game-shell .target-panel strong {
+    font-size: 30px;
+    line-height: 1;
+  }
+  :root .game-shell .score-panel {
+    padding: 4px;
+  }
+  :root .game-shell .score-panel > span {
+    font-size: 9px;
+    letter-spacing: 0;
+  }
+  :root .game-shell .score-panel strong {
+    font-size: 25px;
+    line-height: 1;
+  }
+  :root .game-shell .resources {
+    gap: 3px;
+  }
+  :root .game-shell .resources > div {
+    padding: 3px 2px;
+  }
+  :root .game-shell .resources span {
+    font-size: 9px;
+    letter-spacing: 0;
+  }
+  :root .game-shell .resources strong {
+    font-size: 22px;
+    line-height: 1;
+  }
+  :root .game-shell .resources .wallet {
+    padding: 3px 4px;
+  }
+  :root .game-shell .resources .wallet strong {
+    font-size: 25px;
+  }
+  :root .game-shell .chip-box,
+  :root .game-shell .mult-box {
+    min-height: 23px;
+    padding: 1px;
+    min-width: 0;
+  }
+  :root .game-shell .chip-box > span,
+  :root .game-shell .mult-box > span {
+    display: none;
+  }
+  :root .game-shell .chip-box strong,
+  :root .game-shell .mult-box strong {
+    font-size: 19px;
+    line-height: 1;
+  }
+  :root .game-shell .board {
+    margin: 0;
+    height: 100%;
+    min-height: 0;
+    min-width: 0;
+    display: grid;
+    grid-template-rows:
+      var(--rack-height) minmax(0, 1fr) var(--hand-height)
+      auto;
+    gap: 6px;
+  }
+  :root .game-shell .joker-rack {
+    min-height: 0;
+  }
+  :root .game-shell .section-label {
+    margin-bottom: 4px;
+    height: 18px;
+  }
+  :root .game-shell .section-label h2 {
+    font-size: 10px;
+    line-height: 18px;
+  }
+  :root .game-shell .section-label h2 span {
+    font-size: 17px;
+  }
+  :root .game-shell .joker-slots {
+    height: calc(var(--rack-height) - 22px);
+    gap: 4px;
+  }
+  :root .game-shell .joker-card,
+  :root .game-shell .joker-slot {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 0;
+    padding: 1px;
+    border-width: 1px;
+    margin: 0;
+  }
+  :root .game-shell .joker-card .joker-art {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    height: auto;
+    max-width: 54px;
+    aspect-ratio: 0.7;
+  }
+  :root .game-shell .joker-card .joker-name {
+    position: static;
+    flex: none;
+    max-width: 100%;
+    font-size: 8px;
+    line-height: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  :root .game-shell .joker-card .rarity-badge {
+    bottom: 14px;
+    right: 0;
+    font-size: 6px;
+    padding: 1px 2px;
+  }
+  :root .game-shell .joker-effect {
+    display: none;
+  }
+  :root .game-shell .joker-slot > span {
+    font-size: 22px;
+    line-height: 1;
+  }
+  :root .game-shell .joker-slot small {
+    font-size: 10px;
+  }
+  :root .game-shell .target-suit-badge {
+    width: 16px;
+    height: 16px;
+    top: 1px;
+    right: 1px;
+    font-size: 12px;
+  }
+  :root .game-shell .table-zone,
+  :root .game-shell .board.terminal .table-zone {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  :root .game-shell .penalty-notice {
+    position: static;
+    flex: none;
+    padding: 4px 6px;
+    width: 100%;
+    margin: 0;
+  }
+  :root .game-shell .penalty-notice strong,
+  :root .game-shell .penalty-notice.active strong {
+    font-size: 10px;
+    line-height: 1.3;
+  }
+  :root .game-shell .penalty-notice p,
+  :root .game-shell .penalty-notice.active p {
+    font-size: 10px;
+    line-height: 1.3;
+    margin-top: 2px;
+  }
+  :root .game-shell .penalty-notice .pixel {
+    font-size: 11px;
+  }
+  :root .game-shell .table-center,
+  :root .game-shell .center-panel {
+    flex: 1;
+    min-height: 0;
+    padding: 2px 46px 2px 0;
+    justify-content: center;
+  }
+  :root .game-shell .table-emblem {
+    display: none;
+  }
+  :root .game-shell .table-center h2 {
+    font-size: 20px;
+    margin: 0;
+  }
+  :root .game-shell .table-center .choose-prompt {
+    font-size: 17px;
+  }
+  :root .game-shell .preview-equation {
+    margin: 3px 0;
+  }
+  :root .game-shell .preview-equation .pixel {
+    font-size: 27px;
+  }
+  :root .game-shell .base-score-hint {
+    font-size: 9px;
+    margin: 2px 0;
+  }
+  :root .game-shell .draw-pile {
+    right: 0;
+    bottom: 4px;
+    gap: 3px;
+  }
+  :root .game-shell .draw-pile .card-back {
+    width: 38px;
+    height: 53px;
+  }
+  :root .game-shell .card-back:before {
+    width: 26px;
+    height: 39px;
+  }
+  :root .game-shell .card-back > span {
+    font-size: 26px;
+  }
+  :root .game-shell .draw-pile > span:not(.card-back) {
+    font-size: 8px;
+    letter-spacing: 0;
+    margin: 0;
+  }
+  :root .game-shell .draw-pile strong {
+    font-size: 19px;
+  }
+  :root .game-shell .draw-pile strong small {
+    font-size: 8px;
+  }
+  :root .game-shell .hand-area {
+    min-height: 0;
+    height: var(--hand-height);
+    padding: 0;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+  }
+  :root .game-shell .hand-row {
+    flex: 1;
+    min-height: 0;
+    padding-top: 22px;
+    width: 100%;
+    max-width: min(100%, calc(var(--count) * 54px));
+    align-items: center;
+  }
+  :root .game-shell .playing-card {
+    height: min(112px, calc(var(--hand-height) - 42px));
+    width: calc(100% + 4px);
+    min-height: 0;
+    max-height: none;
+    max-width: 68px;
+    padding: 0;
+  }
+  :root .game-shell .card-corner {
+    font-size: 19px;
+    top: 3px;
+    left: 3px;
+  }
+  :root .game-shell .hand-caption {
+    flex: none;
+    margin-top: 5px;
+    height: 12px;
+    font-size: 8px;
+  }
+  :root .game-shell .controls-area {
+    min-height: 0;
+  }
+  :root .game-shell .controls {
+    gap: 5px;
+    padding: 0;
+  }
+  :root .game-shell .controls > .button {
+    flex: 1;
+    min-width: 0;
+    min-height: 38px;
+    padding: 6px;
+    font-size: 15px;
+    border-width: 1px;
+    border-bottom-width: 3px;
+  }
+  :root .game-shell .controls > .clear-selection {
+    flex: 0 0 auto;
+    min-width: 64px;
+    font-size: 10px;
+  }
+  :root .game-shell .sort-controls {
+    margin: 0;
+    gap: 3px;
+  }
+  :root .game-shell .sort-controls button {
+    min-height: 18px;
+    padding: 2px 6px;
+    font-size: 8px;
+  }
+  :root .game-shell .notice {
+    height: 12px;
+    margin: 3px 0 0;
+    padding: 0;
+    font-size: 9px;
+    line-height: 12px;
+  }
+  :root .game-shell[data-phase="ready"] .hand-area,
+  :root .game-shell[data-phase="ready"] .controls-area,
+  :root .game-shell[data-phase="roundWon"] .hand-area,
+  :root .game-shell[data-phase="roundWon"] .controls-area,
+  :root .game-shell[data-phase="won"] .hand-area,
+  :root .game-shell[data-phase="won"] .controls-area,
+  :root .game-shell[data-phase="lost"] .hand-area,
+  :root .game-shell[data-phase="lost"] .controls-area {
+    display: none;
+  }
+  :root .game-shell[data-phase="ready"] .board,
+  :root .game-shell .board.terminal,
+  :root .game-shell .board.in-shop {
+    grid-template-rows: var(--rack-height) minmax(0, 1fr);
+  }
+  :root .game-shell .welcome {
+    padding-right: 0;
+  }
+  :root .game-shell .welcome h2 {
+    font-size: 27px;
+  }
+  :root .game-shell .welcome p {
+    font-size: 11px;
+    margin: 9px 0;
+    line-height: 1.5;
+  }
+  :root .game-shell .welcome .button {
+    min-width: 0;
+    min-height: 38px;
+    font-size: 12px;
+    padding: 6px 9px;
+  }
+  :root .game-shell .welcome small {
+    font-size: 9px;
+    margin-top: 9px;
+  }
+  :root .game-shell .welcome-actions {
+    gap: 6px;
+  }
+  :root .game-shell .result-symbol {
+    font-size: 23px;
+  }
+  :root .game-shell .result-panel h2 {
+    font-size: 21px;
+    margin: 4px 0;
+  }
+  :root .game-shell .result-score {
+    font-size: 33px;
+  }
+  :root .game-shell .reward-breakdown {
+    font-size: 10px;
+    padding: 5px 9px;
+    width: 200px;
+    margin: 7px 0;
+  }
+  :root .game-shell .result-panel .button {
+    min-height: 34px;
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+  :root .game-shell .scoring-detail {
+    font-size: 10px;
+    min-height: 0;
+    margin: 3px 0;
+  }
+  :root .game-shell .expected-score {
+    font-size: 30px;
+    margin: 0;
+  }
+  :root .game-shell .played-cards {
+    margin: 0;
+    gap: 3px;
+  }
+  :root .game-shell .playing-card.miniature {
+    height: 45px;
+    width: 30px;
+    min-height: 0;
+  }
+  :root .game-shell .shop {
+    min-height: 0;
+    align-self: stretch;
+    display: grid;
+    grid-template-rows: auto auto minmax(0, 1fr) auto;
+    gap: 6px;
+    padding: 0;
+  }
+  :root .game-shell .shop-heading {
+    grid-row: 1;
+    margin: 0;
+  }
+  :root .game-shell .shop-heading h2 {
+    font-size: 18px;
+  }
+  :root .game-shell .shop-purse {
+    font-size: 27px;
+  }
+  :root .game-shell .shop .penalty-notice {
+    grid-row: 2;
+  }
+  :root .game-shell .shop-offers {
+    grid-row: 3;
+    min-height: 0;
+    gap: 5px;
+    align-items: stretch;
+  }
+  :root .game-shell .shop.is-pack .shop-offers {
+    grid-row: 2;
+  }
+  :root .game-shell .shop.is-pack {
+    grid-template-rows: auto minmax(0, 1fr) auto auto;
+  }
+  :root .game-shell .pack-full {
+    grid-row: 3;
+    font-size: 10px;
+    margin: 0;
+  }
+  :root .game-shell .pack-remaining {
+    font-size: 11px;
+    margin: 2px 0 0;
+  }
+  :root .game-shell .shop-offer {
+    min-height: 0;
+    padding: 6px 4px;
+    gap: 3px;
+    justify-content: center;
+  }
+  :root .game-shell .offer-art {
+    flex: 0 1 auto;
+    margin: 0;
+    width: min(70px, 80%);
+    max-height: 16dvh;
+  }
+  :root .game-shell .offer-art .joker-art,
+  :root .game-shell .offer-art .pack-wrapper {
+    width: 100%;
+    height: auto;
+    max-height: 16dvh;
+    aspect-ratio: 0.7;
+  }
+  :root .game-shell .price {
+    font-size: 18px;
+    right: -5px;
+    padding: 2px 4px;
+  }
+  :root .game-shell .shop-offer h3 {
+    min-height: 0;
+    font-size: 11px;
+    line-height: 1.3;
+    margin: 3px 0;
+    letter-spacing: 0;
+  }
+  :root .game-shell .offer-meta .rarity-badge {
+    font-size: 8px;
+    padding: 2px 3px;
+  }
+  :root .game-shell .offer-effect {
+    min-height: 0;
+    font-size: 10px;
+    line-height: 1.4;
+    margin: 3px 0;
+  }
+  :root .game-shell .offer-description {
+    display: none;
+  }
+  :root .game-shell .offer-meta .joker-status {
+    font-size: 9px;
+    line-height: 1.4;
+    margin: 3px 0;
+  }
+  :root .game-shell .offer-details {
+    font-size: 10px;
+    min-height: 24px;
+    padding: 2px 5px;
+  }
+  :root .game-shell .shop-offer > .button {
+    margin-top: auto;
+    width: 100%;
+    min-height: 32px;
+    padding: 5px 1px;
+    font-size: 11px;
+  }
+  :root .game-shell .shop-actions {
+    grid-row: 4;
+    margin: 0;
+    gap: 6px;
+  }
+  :root .game-shell .shop-actions > .button {
+    min-height: 34px;
+    min-width: 0;
+    flex: 1;
+    font-size: 12px;
+    padding: 5px 9px;
+  }
+  :root .game-shell .sold-stamp {
+    font-size: 10px;
+    padding: 3px;
+  }
+  :root .game-shell .modal {
+    max-height: calc(100dvh - 24px);
+    max-width: calc(100vw - 24px);
+  }
+}
+@media (max-width: 760px) and (max-height: 650px) {
+  :root .game-shell {
+    --rack-height: 66px;
+    --hand-height: 102px;
+    gap: 5px;
+  }
+  :root .game-shell .brand h1 {
+    font-size: 28px;
+  }
+  :root .game-shell .brand h1 span {
+    font-size: 18px;
+  }
+  :root .game-shell .sidebar {
+    gap: 4px;
+  }
+  :root .game-shell .target-panel strong {
+    font-size: 27px;
+  }
+  :root .game-shell .score-panel strong {
+    font-size: 23px;
+  }
+  :root .game-shell .resources strong {
+    font-size: 19px;
+  }
+  :root .game-shell .resources .wallet strong {
+    font-size: 22px;
+  }
+  :root .game-shell .chip-box strong,
+  :root .game-shell .mult-box strong {
+    font-size: 17px;
+  }
+  :root .game-shell .penalty-notice p,
+  :root .game-shell .penalty-notice.active p {
+    font-size: 9px;
+  }
+  :root .game-shell .table-center .choose-prompt {
+    font-size: 15px;
+  }
+  :root .game-shell .shop-offer {
+    padding: 4px 3px;
+    gap: 2px;
+  }
+  :root .game-shell .shop-heading h2 {
+    font-size: 16px;
+  }
+  :root .game-shell .offer-art {
+    width: min(48px, 72%);
+  }
+  :root .game-shell .shop-offer h3 {
+    font-size: 10px;
+  }
+  :root .game-shell .offer-effect {
+    font-size: 9px;
+  }
+  :root .game-shell .shop-offer > .button {
+    min-height: 29px;
+    font-size: 10px;
+  }
+}
+@media (orientation: landscape) and (max-height: 600px) {
+  :root .game-shell {
+    --rack-height: clamp(56px, 18dvh, 84px);
+    --hand-height: clamp(82px, 27dvh, 130px);
+    grid-template-columns: clamp(132px, 21vw, 196px) minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+    gap: 8px;
+  }
+  :root .game-shell .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  :root .game-shell .brand h1 {
+    font-size: 30px;
+    text-align: left;
+  }
+  :root .game-shell .brand h1 span {
+    font-size: 18px;
+  }
+  :root .game-shell .run-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 4px;
+    padding: 5px;
+  }
+  :root .game-shell .progression-label {
+    grid-column: 1/-1;
+    grid-row: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 8px;
+  }
+  :root .game-shell .progression-label strong,
+  :root .game-shell .progression-label .pixel {
+    font-size: 14px;
+  }
+  :root .game-shell .target-panel {
+    grid-column: 1/-1;
+    grid-row: auto;
+    padding: 3px;
+  }
+  :root .game-shell .target-panel strong {
+    font-size: 27px;
+  }
+  :root .game-shell .score-panel {
+    grid-column: 1/-1;
+    grid-row: auto;
+    padding: 3px;
+  }
+  :root .game-shell .score-panel strong {
+    font-size: 23px;
+  }
+  :root .game-shell .score-formula {
+    grid-column: 1/-1;
+    grid-row: auto;
+    gap: 2px;
+    grid-template-columns: 1fr 10px 1fr;
+  }
+  :root .game-shell .chip-box,
+  :root .game-shell .mult-box {
+    min-height: 21px;
+  }
+  :root .game-shell .chip-box strong,
+  :root .game-shell .mult-box strong {
+    font-size: 18px;
+  }
+  :root .game-shell .resources {
+    grid-column: 1/-1;
+    grid-row: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0;
+    gap: 3px;
+  }
+  :root .game-shell .resources .wallet {
+    grid-column: 1/-1;
+    padding: 3px 5px;
+  }
+  :root .game-shell .resources strong {
+    font-size: 19px;
+  }
+  :root .game-shell .resources .wallet strong {
+    font-size: 22px;
+  }
+  :root .game-shell .side-actions {
+    display: flex;
+    margin-top: auto;
+    gap: 4px;
+  }
+  :root .game-shell .side-actions button {
+    flex: 1;
+    min-width: 0;
+    min-height: 27px;
+    height: 27px;
+  }
+  :root .game-shell .board {
+    gap: 4px;
+  }
+  :root .game-shell .joker-card .joker-art {
+    max-width: 40px;
+  }
+  :root .game-shell .joker-card .joker-name {
+    font-size: 8px;
+    line-height: 11px;
+  }
+  :root .game-shell .joker-card .rarity-badge {
+    display: none;
+  }
+  :root .game-shell .section-label {
+    height: 14px;
+    margin-bottom: 3px;
+  }
+  :root .game-shell .section-label h2 {
+    font-size: 9px;
+    line-height: 14px;
+  }
+  :root .game-shell .section-label h2 span {
+    font-size: 14px;
+  }
+  :root .game-shell .joker-slots {
+    height: calc(var(--rack-height) - 17px);
+  }
+  :root .game-shell .penalty-notice {
+    padding: 3px 5px;
+  }
+  :root .game-shell .penalty-notice strong,
+  :root .game-shell .penalty-notice.active strong {
+    font-size: 10px;
+  }
+  :root .game-shell .penalty-notice p,
+  :root .game-shell .penalty-notice.active p {
+    font-size: 9px;
+    margin-top: 1px;
+  }
+  :root .game-shell .table-center .choose-prompt {
+    font-size: 15px;
+  }
+  :root .game-shell .table-center h2 {
+    font-size: 18px;
+  }
+  :root .game-shell .preview-equation .pixel {
+    font-size: 23px;
+  }
+  :root .game-shell .playing-card {
+    height: min(90px, calc(var(--hand-height) - 30px));
+    max-width: 66px;
+  }
+  :root .game-shell .hand-row {
+    padding-top: 17px;
+    max-width: min(100%, calc(var(--count) * 64px));
+  }
+  :root .game-shell .hand-caption {
+    margin-top: 2px;
+  }
+  :root .game-shell .controls > .button {
+    min-height: 31px;
+    padding: 4px 6px;
+    font-size: 13px;
+  }
+  :root .game-shell .controls > .clear-selection {
+    font-size: 10px;
+  }
+  :root .game-shell .sort-controls {
+    display: flex;
+    align-items: stretch;
+  }
+  :root .game-shell .sort-controls button {
+    min-height: 30px;
+    font-size: 9px;
+  }
+  :root .game-shell .notice {
+    font-size: 8px;
+    height: 10px;
+    line-height: 10px;
+  }
+  :root .game-shell .card-back {
+    display: none;
+  }
+  :root .game-shell .draw-pile {
+    bottom: 2px;
+  }
+  :root .game-shell .draw-pile > span:not(.card-back) {
+    font-size: 9px;
+  }
+  :root .game-shell .welcome h2 {
+    font-size: 25px;
+  }
+  :root .game-shell .welcome p {
+    font-size: 11px;
+    margin: 6px 0;
+  }
+  :root .game-shell .welcome .button {
+    min-height: 34px;
+    font-size: 12px;
+  }
+  :root .game-shell .result-panel {
+    padding: 0 46px 0 0;
+  }
+  :root .game-shell .result-symbol {
+    display: none;
+  }
+  :root .game-shell .result-panel h2 {
+    font-size: 19px;
+    margin: 1px 0;
+  }
+  :root .game-shell .result-score {
+    font-size: 27px;
+  }
+  :root .game-shell .reward-breakdown {
+    padding: 4px 8px;
+    margin: 4px 0;
+    font-size: 9px;
+  }
+  :root .game-shell .result-panel .button {
+    min-height: 29px;
+    font-size: 11px;
+  }
+  :root .game-shell .shop {
+    gap: 4px;
+  }
+  :root .game-shell .shop-heading h2 {
+    font-size: 15px;
+  }
+  :root .game-shell .shop-purse {
+    font-size: 23px;
+  }
+  :root .game-shell .shop-offer {
+    display: grid;
+    grid-template-columns: minmax(28px, 0.36fr) minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 3px;
+    padding: 5px;
+  }
+  :root .game-shell .offer-art {
+    width: 100%;
+    max-width: 55px;
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    max-height: 85px;
+  }
+  :root .game-shell .offer-art .joker-art,
+  :root .game-shell .offer-art .pack-wrapper {
+    max-height: 85px;
+  }
+  :root .game-shell .offer-meta {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+  }
+  :root .game-shell .offer-meta h3 {
+    font-size: 10px;
+    margin: 0 0 2px;
+  }
+  :root .game-shell .offer-meta .rarity-badge {
+    font-size: 7px;
+    padding: 1px 2px;
+  }
+  :root .game-shell .offer-effect {
+    font-size: 9px;
+    margin: 2px 0;
+    line-height: 1.25;
+  }
+  :root .game-shell .offer-meta .joker-status {
+    font-size: 8px;
+    margin: 2px 0;
+  }
+  :root .game-shell .offer-details {
+    min-height: 19px;
+    font-size: 9px;
+    padding: 1px 4px;
+  }
+  :root .game-shell .shop-offer > .button {
+    grid-column: 1/-1;
+    grid-row: 2;
+    min-height: 28px;
+    padding: 3px;
+    font-size: 10px;
+  }
+  :root .game-shell .shop-actions > .button {
+    min-height: 29px;
+    font-size: 11px;
+  }
+  :root .game-shell .price {
+    font-size: 14px;
+    right: -4px;
+    padding: 1px 3px;
+  }
+}
+@media (max-width: 760px) and (orientation: portrait) and (max-height: 650px) {
+  :root .game-shell {
+    --rack-height: 76px;
+    --hand-height: 126px;
+  }
+}
+@media (orientation: landscape) and (max-height: 350px) {
+  :root .game-shell .brand h1 {
+    font-size: 24px;
+  }
+  :root .game-shell .run-panel {
+    padding: 4px;
+    gap: 3px;
+  }
+  :root .game-shell .target-panel strong {
+    font-size: 25px;
+  }
+  :root .game-shell .score-panel strong {
+    font-size: 21px;
+  }
+  :root .game-shell .resources strong {
+    font-size: 17px;
+  }
+  :root .game-shell .resources .wallet strong {
+    font-size: 19px;
+  }
+}
+@media (max-width: 760px), (orientation: landscape) and (max-height: 600px) {
+  :root .game-shell .shop-offers.pack-choices {
+    grid-template-columns: repeat(var(--pack-count), minmax(0, 1fr));
+  }
+}
+@media (max-width: 760px) and (orientation: portrait) and (max-height: 650px) {
+  :root .game-shell .shop.is-pack .offer-art {
+    width: min(42px, 78%);
+  }
+  :root .game-shell .shop.is-pack .shop-offer h3 {
+    font-size: 9px;
+  }
+  :root .game-shell .shop.is-pack .offer-effect {
+    font-size: 9px;
+    line-height: 1.25;
+  }
+  :root .game-shell .shop.is-pack .offer-meta .joker-status {
+    font-size: 8px;
+  }
+  :root .game-shell .shop.is-pack .offer-details {
+    min-height: 20px;
+    font-size: 9px;
+  }
+}
+@media (max-width: 760px), (orientation: landscape) and (max-height: 600px) {
+  :root .game-shell .round-label,
+  :root .game-shell .score-panel {
+    margin: 0;
+  }
+}
+@media (orientation: landscape) and (max-height: 300px) {
+  :root .game-shell .shop-purse,
+  :root .game-shell .shop-heading h2 {
+    line-height: 1;
+  }
+  :root .game-shell .shop .penalty-notice strong {
+    font-size: 9px;
+    line-height: 1.1;
+  }
+  :root .game-shell .shop .penalty-notice p {
+    font-size: 8px;
+    line-height: 1.1;
+  }
+  :root .game-shell .shop-offer {
+    padding: 3px;
+    gap: 2px;
+  }
+  :root .game-shell .offer-meta .rarity-badge {
+    display: none;
+  }
+  :root .game-shell .shop-offer > .button {
+    min-height: 24px;
+    padding: 2px;
+  }
+  :root .game-shell .offer-details {
+    min-height: 16px;
+    padding: 0 3px;
+  }
+  :root .game-shell .shop.is-pack .offer-effect {
+    display: none;
+  }
+  :root .game-shell .shop.is-pack .joker-status {
+    line-height: 1.1;
+  }
+  :root .game-shell .result-panel h2 {
+    max-width: none;
+    font-size: 16px;
+    line-height: 1.1;
+    margin: 0;
+  }
+  :root .game-shell .target-panel,
+  :root .game-shell .score-panel {
+    grid-column: auto;
+    align-self: stretch;
+  }
+  :root .game-shell .target-panel strong { font-size: 23px; }
+  :root .game-shell .score-panel strong { font-size: 21px; }
+  :root .game-shell .brand h1 { font-size: 22px; }
+}

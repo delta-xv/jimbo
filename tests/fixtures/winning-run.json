@@ -1,0 +1,425 @@
+{
+  "seed": 1,
+  "penalties": [
+    "one_hand_type",
+    "small_hand",
+    "no_discards"
+  ],
+  "route": [
+    {
+      "action": {
+        "type": "discard",
+        "ids": [
+          48,
+          21,
+          47,
+          32,
+          18
+        ]
+      }
+    },
+    {
+      "action": {
+        "type": "play",
+        "ids": [
+          1,
+          14,
+          27,
+          40
+        ]
+      }
+    },
+    {
+      "action": {
+        "type": "enterShop"
+      }
+    },
+    {
+      "action": {
+        "type": "buy",
+        "id": 1001
+      }
+    },
+    {
+      "action": {
+        "type": "buy",
+        "id": 1000
+      }
+    },
+    {
+      "action": {
+        "type": "nextRound"
+      }
+    },
+    {
+      "action": {
+        "type": "discard",
+        "ids": [
+          65,
+          70,
+          81,
+          79
+        ]
+      }
+    },
+    {
+      "action": {
+        "type": "play",
+        "ids": [
+          62,
+          87,
+          73,
+          85,
+          97
+        ]
+      }
+    },
+    {
+      "action": {
+        "type": "enterShop"
+      }
+    },
+    {
+      "action": {
+        "type": "buy",
+        "id": 1002
+      }
+    },
+    {
+      "action": {
+        "type": "reorderJokers",
+        "ids": [
+          1001,
+          1002,
+          1000
+        ]
+      }
+    },
+    {
+      "action": {
+        "type": "nextRound"
+      }
+    },
+    {
+      "action": {
+        "type": "play",
+        "ids": [
+          116,
+          155,
+          124,
+          150
+        ]
+      }
+    },
+    {
+      "action": {
+        "type": "enterShop"
+      }
+    },
+    {
+      "action": {
+        "type": "buy",
+        "id": 1004
+      }
+    },
+    {
+      "action": {
+        "type": "reorderJokers",
+        "ids": [
+          1001,
+          1002,
+          1004,
+          1000
+        ]
+      }
+    },
+    {
+      "action": {
+        "type": "nextRound"
+      }
+    },
+    {
+      "action": {
+        "type": "discard",
+        "ids": [
+          206,
+          178,
+          189,
+          187,
+          158
+        ]
+      }
+    },
+    {
+      "action": {
+        "type": "play",
+        "ids": [
+          164,
+          177,
+          203,
+          160,
+          173
+        ]
+      }
+    },
+    {
+      "action": {
+        "type": "enterShop"
+      }
+    },
+    {
+      "action": {
+        "type": "buy",
+        "id": 1007
+      }
+    },
+    {
+      "action": {
+        "type": "nextRound"
+      }
+    },
+    {
+      "action": {
+        "type": "discard",
+        "ids": [
+          246,
+          211
+        ]
+      }
+    },
+    {
+      "action": {
+        "type": "play",
+        "ids": [
+          218,
+          231,
+          244,
+          213,
+          252
+        ]
+      }
+    },
+    {
+      "action": {
+        "type": "enterShop"
+      }
+    },
+    {
+      "action": {
+        "type": "buy",
+        "id": 1009
+      }
+    },
+    {
+      "action": {
+        "type": "reorderJokers",
+        "ids": [
+          1001,
+          1002,
+          1004,
+          1009,
+          1000,
+          1007
+        ]
+      }
+    },
+    {
+      "action": {
+        "type": "nextRound"
+      }
+    },
+    {
+      "action": {
+        "type": "discard",
+        "ids": [
+          311,
+          297,
+          308
+        ]
+      }
+    },
+    {
+      "action": {
+        "type": "play",
+        "ids": [
+          269,
+          294,
+          280,
+          279,
+          304
+        ]
+      }
+    },
+    {
+      "action": {
+        "type": "enterShop"
+      }
+    },
+    {
+      "action": {
+        "type": "sell",
+        "id": 1002
+      }
+    },
+    {
+      "action": {
+        "type": "buy",
+        "id": 1010
+      }
+    },
+    {
+      "action": {
+        "type": "reorderJokers",
+        "ids": [
+          1001,
+          1004,
+          1009,
+          1010,
+          1000,
+          1007
+        ]
+      }
+    },
+    {
+      "action": {
+        "type": "nextRound"
+      }
+    },
+    {
+      "action": {
+        "type": "discard",
+        "ids": [
+          346
+        ]
+      }
+    },
+    {
+      "action": {
+        "type": "play",
+        "ids": [
+          351,
+          363,
+          323,
+          348,
+          321
+        ]
+      }
+    },
+    {
+      "action": {
+        "type": "enterShop"
+      }
+    },
+    {
+      "action": {
+        "type": "nextRound"
+      }
+    },
+    {
+      "action": {
+        "type": "play",
+        "ids": [
+          396,
+          409,
+          366,
+          379,
+          405
+        ]
+      }
+    },
+    {
+      "action": {
+        "type": "enterShop"
+      }
+    },
+    {
+      "action": {
+        "type": "sell",
+        "id": 1000
+      }
+    },
+    {
+      "action": {
+        "type": "buy",
+        "id": 1014
+      }
+    },
+    {
+      "action": {
+        "type": "reroll"
+      }
+    },
+    {
+      "action": {
+        "type": "reroll"
+      }
+    },
+    {
+      "action": {
+        "type": "reorderJokers",
+        "ids": [
+          1001,
+          1004,
+          1009,
+          1010,
+          1014,
+          1007
+        ]
+      }
+    },
+    {
+      "action": {
+        "type": "nextRound"
+      }
+    },
+    {
+      "action": {
+        "type": "play",
+        "ids": [
+          428,
+          454,
+          423,
+          449
+        ]
+      }
+    },
+    {
+      "action": {
+        "type": "play",
+        "ids": [
+          444,
+          457
+        ]
+      }
+    },
+    {
+      "action": {
+        "type": "play",
+        "ids": [
+          465,
+          463,
+          462,
+          461,
+          458
+        ]
+      }
+    },
+    {
+      "action": {
+        "type": "play",
+        "ids": [
+          438,
+          451,
+          433,
+          446
+        ]
+      }
+    }
+  ],
+  "final": {
+    "phase": "won",
+    "score": 32718,
+    "money": 15
+  },
+  "jokerCount": 6
+}

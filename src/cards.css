@@ -1,0 +1,90 @@
+:root .playing-card {
+  color: #14252d;
+}
+:root .playing-card.red {
+  color: #a32930;
+}
+.playing-card .card-pips,
+.playing-card .card-court {
+  position: absolute;
+  inset: 13% 18%;
+  width: 64%;
+  height: 74%;
+  pointer-events: none;
+}
+.playing-card .card-court {
+  inset: 15% 17%;
+  width: 66%;
+  height: 70%;
+}
+:root .playing-card .card-corner {
+  width: clamp(17px, 0.8em, 28px);
+  background: #fff7e5;
+  border-radius: 2px;
+  padding: 0;
+  gap: 0;
+  text-shadow: none;
+}
+:root .playing-card .card-corner b {
+  line-height: 0.75;
+}
+:root .playing-card .card-corner svg {
+  width: 0.76em;
+  height: 0.76em;
+  max-width: 100%;
+  margin-top: 1px;
+}
+:root .playing-card .card-corner.lower {
+  top: auto;
+  left: auto;
+  right: 3px;
+  bottom: 3px;
+}
+:root .playing-card.miniature .card-corner:not(.lower) {
+  top: 2px;
+  left: 2px;
+  width: calc(100% - 4px);
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 13px;
+  background: transparent;
+}
+:root .playing-card.miniature .card-corner.lower {
+  display: none;
+}
+:root .playing-card.miniature .card-corner svg {
+  margin: 0;
+  width: 10px;
+  height: 10px;
+}
+.playing-card.miniature .card-pips {
+  inset: 37% 22% auto;
+  width: 56%;
+  height: 60%;
+}
+.playing-card.miniature .card-court {
+  inset: 37% 21% auto;
+  width: 58%;
+  height: 60%;
+}
+.settings-form .audio-volume input[type="range"] {
+  width: min(46%, 180px);
+  accent-color: #75b994;
+  padding: 0;
+}
+.audio-volume output {
+  font-size: 12px;
+  color: #e5ca88;
+  margin-left: 6px;
+}
+@media (max-width: 760px), (orientation: landscape) and (max-height: 600px) {
+  :root .game-shell .playing-card .card-corner {
+    flex-direction: row;
+    width: auto;
+    gap: 2px;
+    align-items: center;
+  }
+  :root .game-shell .playing-card .card-corner svg {
+    margin-top: 0;
+  }
+}

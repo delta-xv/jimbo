@@ -1,0 +1,26 @@
+Balatro-GBA audio
+Source: https://github.com/GBALATRO/balatro-gba
+Revision: eb4146aa2bf76a22d722170382618e65bb59046c
+Credits: https://github.com/GBALATRO/balatro-gba/blob/eb4146aa2bf76a22d722170382618e65bb59046c/README.md#credits
+
+mult.wav and xmult.wav:
+Derived from Toy records#06-E3-02.wav by poissonmort.
+Source: https://freesound.org/people/poissonmort/sounds/253249/
+License: Creative Commons Attribution 4.0 International
+https://creativecommons.org/licenses/by/4.0/
+The GBA project supplies processed samples. Jimbo uses those WAV files unchanged.
+
+Other included WAV sound effects:
+The upstream README credits LocalThunk and states Creative Commons CC0.
+https://creativecommons.org/publicdomain/zero/1.0/
+Jimbo uses the upstream WAV files unchanged.
+
+Theme music:
+GBA arrangement by cellos51 and MeirGavish, based on the original Balatro
+soundtrack by LouisF and transcription by MrCrimit.
+https://louisfmusic.com/
+https://musescore.com/user/8237321/scores/14590660
+main_theme.xm rendered to stereo audio and encoded as Ogg Opus for Jimbo.
+The upstream does not state a separate redistribution license for the theme.
+All rights to the original composition remain with their respective holders.
+The source project is a non-profit fan demake and states that it is not to be sold.
