@@ -8,7 +8,7 @@
 
 ## 下载 Android APK
 
-**[下载 v0.1.11 APK](https://github.com/delta-xv/jimbo/releases/download/v0.1.11/jimbo-0.1.11-debug.apk)** · [SHA-256 校验文件](https://github.com/delta-xv/jimbo/releases/download/v0.1.11/SHA256SUMS) · [所有版本](https://github.com/delta-xv/jimbo/releases)
+**[下载 v1.0.0 APK](https://github.com/delta-xv/jimbo/releases/download/v1.0.0/jimbo-1.0.0-debug.apk)** · [SHA-256 校验文件](https://github.com/delta-xv/jimbo/releases/download/v1.0.0/SHA256SUMS)
 
 安装后可离线游玩，支持手机横竖屏。当前提供 debug 测试包。
 
@@ -63,4 +63,4 @@ npm ci
 npm run apk
 ```
 
-产物位于 `dist/jimbo-0.1.11-debug.apk`，附带 `dist/SHA256SUMS`。这是 debug 测试包。工具链配置、签名与覆盖安装、系统返回键、模拟器验证方式见 [Android 说明](docs/android.md)。
+产物位于 `dist/jimbo-1.0.0-debug.apk`，附带 `dist/SHA256SUMS`。这是 debug 测试包。工具链配置、签名与覆盖安装、系统返回键、模拟器验证方式见 [Android 说明](docs/android.md)。

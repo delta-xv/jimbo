@@ -11,14 +11,14 @@ npm ci
 npm run apk
 ```
 
-脚本会构建网页、同步 Android 资源、执行 `assembleDebug`，将可安装文件输出到 `dist/jimbo-0.1.11-debug.apk`，并生成 `dist/SHA256SUMS`。测试包使用本机 Android 调试密钥签名；正式发布需使用独立发行密钥。
+脚本会构建网页、同步 Android 资源、执行 `assembleDebug`，将可安装文件输出到 `dist/jimbo-1.0.0-debug.apk`，并生成 `dist/SHA256SUMS`。测试包使用本机 Android 调试密钥签名；正式发布需使用独立发行密钥。
 
 脚本优先读取 `JAVA_HOME`、`ANDROID_HOME` 或 `ANDROID_SDK_ROOT`。macOS 还会查找用户目录的 JDK 21 和 `~/Library/Android/sdk`。其他安装位置应通过环境变量指定。Gradle 依赖优先使用国内镜像，下载的 Gradle 发行包使用 SHA-256 校验；构建脚本保留现有代理环境。
 
 安装到已授权设备：
 
 ```sh
-adb install -r dist/jimbo-0.1.11-debug.apk
+adb install -r dist/jimbo-1.0.0-debug.apk
 ```
 
 ## GitHub 构建与测试包

@@ -8,7 +8,7 @@
 
 ## Download for Android
 
-**[Download v0.1.11 APK](https://github.com/delta-xv/jimbo/releases/download/v0.1.11/jimbo-0.1.11-debug.apk)** · [SHA-256 checksums](https://github.com/delta-xv/jimbo/releases/download/v0.1.11/SHA256SUMS) · [All releases](https://github.com/delta-xv/jimbo/releases)
+**[Download v1.0.0 APK](https://github.com/delta-xv/jimbo/releases/download/v1.0.0/jimbo-1.0.0-debug.apk)** · [SHA-256 checksums](https://github.com/delta-xv/jimbo/releases/download/v1.0.0/SHA256SUMS)
 
 Play offline after installation, in portrait or landscape. The current APK is a debug test build.
 
@@ -63,4 +63,4 @@ npm ci
 npm run apk
 ```
 
-The output is `dist/jimbo-0.1.11-debug.apk`, accompanied by `dist/SHA256SUMS`. This is a debug test build. See the [Android guide (Chinese)](docs/android.md) for toolchain setup, signing, upgrades, system back-button behavior, and emulator checks.
+The output is `dist/jimbo-1.0.0-debug.apk`, accompanied by `dist/SHA256SUMS`. This is a debug test build. See the [Android guide (Chinese)](docs/android.md) for toolchain setup, signing, upgrades, system back-button behavior, and emulator checks.
