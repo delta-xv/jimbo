@@ -110,3 +110,28 @@ it("TC-141: backgrounding and teardown cancel pending sounds without replaying t
   expect(contexts[0].sources).toHaveLength(0);
   expect(contexts[0].close).toHaveBeenCalled();
 });
+
+it("TC-182: playback failures remain contained and the next gesture can retry", async () => {
+  const { player, music } = setup();
+  music.play.mockImplementationOnce(() => { throw new Error("interrupted"); });
+  expect(() => player.unlock()).not.toThrow();
+  music.play.mockRejectedValueOnce(new Error("gesture required"));
+  expect(() => player.unlock()).not.toThrow();
+  await Promise.resolve();
+  player.unlock();
+  expect(music.paused).toBe(false);
+  player.dispose();
+});
+
+it("TC-183: an active foreground notification retries interrupted audio without replaying effects", async () => {
+  const { player, music, contexts } = setup();
+  player.unlock();
+  await player.play("button");
+  music.paused = true;
+  contexts[0].state = "interrupted";
+  player.setActive(true);
+  expect(contexts[0].resume).toHaveBeenCalledOnce();
+  expect(music.paused).toBe(false);
+  expect(contexts[0].sources).toHaveLength(1);
+  player.dispose();
+});

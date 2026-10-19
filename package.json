@@ -15,6 +15,11 @@
     "typecheck": "tsc --noEmit",
     "android:sync": "npm run build && cap sync android",
     "apk": "node scripts/build-apk.mjs",
+    "ios:sync": "npm run build && cap sync ios",
+    "ios:open": "cap open ios",
+    "ios:simulator": "node scripts/build-ios.mjs simulator",
+    "ios:unsigned": "node scripts/build-ios.mjs unsigned",
+    "ios:archive": "node scripts/build-ios.mjs archive",
     "notices:sync": "node scripts/sync-notices.mjs",
     "notices:check": "node scripts/sync-notices.mjs --check",
     "prebuild": "npm run notices:sync"
@@ -23,6 +28,8 @@
     "@capacitor/android": "8.5.2",
     "@capacitor/app": "8.1.1",
     "@capacitor/core": "8.5.2",
+    "@capacitor/ios": "8.5.2",
+    "@capacitor/preferences": "8.0.1",
     "@fontsource/vt323": "5.3.0",
     "react": "19.2.6",
     "react-dom": "19.2.6"

@@ -6,18 +6,12 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { LOCALE_KEY, resolveLocale, type Locale } from "./locale";
+import { LOCALE_KEY, loadLocale, type Locale } from "./locale";
+import { writeStored } from "../storage/storage";
 import { translate, cardName, formatStep, formatNumber } from "./format";
 import { handNames, jokerTexts, type MessageKey } from "./messages";
 import type { Card, HandId, JokerId, ScoreStep } from "../game/types";
 
-function initialLanguage(): Locale {
-  let stored: unknown = null;
-  try {
-    stored = window.localStorage.getItem(LOCALE_KEY);
-  } catch {}
-  return resolveLocale(stored, navigator.language);
-}
 function createText(locale: Locale) {
   return {
     locale,
@@ -42,14 +36,14 @@ export function I18nProvider({
   initialLocale?: Locale;
 }) {
   const [locale, setLocale] = useState<Locale>(
-    () => initialLocale ?? initialLanguage(),
+    () => initialLocale ?? loadLocale(navigator.language),
   );
   const value = useMemo(() => ({ ...createText(locale), setLocale }), [locale]);
   useEffect(() => {
     document.documentElement.lang = locale;
     document.title = translate(locale, "title");
     try {
-      window.localStorage.setItem(LOCALE_KEY, locale);
+      writeStored(LOCALE_KEY, locale);
     } catch {}
   }, [locale]);
   return <Context.Provider value={value}>{children}</Context.Provider>;

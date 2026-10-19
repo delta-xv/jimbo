@@ -4,6 +4,7 @@ import { PENALTY_IDS } from "../game/progression";
 import { gameReducer } from "../game/reducer";
 import { validRules } from "../game/rules";
 import type { GameState } from "../game/types";
+import { readStored, writeStored, removeStored } from "../storage/storage";
 
 export const RUN_KEY = "jimbo:run";
 const VERSION = 1;
@@ -223,7 +224,7 @@ export function parseRun(text: string | null): SavedRun {
 }
 export function loadRun(): SavedRun {
   try {
-    return parseRun(window.localStorage.getItem(RUN_KEY));
+    return parseRun(readStored(RUN_KEY));
   } catch {
     return { status: "unavailable", state: null };
   }
@@ -232,8 +233,8 @@ export function saveRun(state: GameState): boolean {
   if (state.phase === "ready") return true;
   try {
     const text = serializeRun(state);
-    if (text === null) window.localStorage.removeItem(RUN_KEY);
-    else window.localStorage.setItem(RUN_KEY, text);
+    if (text === null) removeStored(RUN_KEY);
+    else writeStored(RUN_KEY, text);
     return true;
   } catch {
     return false;

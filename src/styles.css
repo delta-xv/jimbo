@@ -107,6 +107,15 @@ body:after {
   opacity: 0.5;
   z-index: 99;
 }
+.startup {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  text-align: center;
+}
 .game-shell {
   max-width: 1640px;
   min-height: 100svh;

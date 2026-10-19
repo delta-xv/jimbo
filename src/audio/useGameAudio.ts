@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef } from "react";
-import { App as NativeApp } from "@capacitor/app";
-import { Capacitor } from "@capacitor/core";
+import { listenForNativeEvents } from "../native/lifecycle";
 import type { AudioSettings } from "../settings/settings";
 import type { GameState, ScoreStep } from "../game/types";
 import type { MotionFrame } from "../ui/motion";
@@ -36,15 +35,15 @@ export function useGameAudio(
     const visibility = () => audio.setActive(!document.hidden && nativeActive);
     document.addEventListener("visibilitychange", visibility);
     visibility();
-    const listener = Capacitor.isNativePlatform()
-      ? NativeApp.addListener("appStateChange", ({ isActive }) => {
-          nativeActive = isActive;
-          visibility();
-        })
-      : null;
+    const stopListening = listenForNativeEvents({
+      stateChange: (active) => {
+        nativeActive = active;
+        visibility();
+      },
+    });
     return () => {
       document.removeEventListener("visibilitychange", visibility);
-      void listener?.then((handle) => handle.remove());
+      stopListening();
       audio.dispose();
       player.current = null;
     };
@@ -58,7 +57,7 @@ export function useGameAudio(
     [],
   );
   const play = useCallback((sound: Sound, rate?: number) => {
-    void player.current?.play(sound, rate);
+    void player.current?.play(sound, rate).catch(() => {});
   }, []);
   const cueKey = useRef("");
   useEffect(() => {

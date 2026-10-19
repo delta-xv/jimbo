@@ -64,11 +64,13 @@ export class AudioPlayer {
     ) {
       this.music.pause();
     } else if (this.music.paused) {
-      void this.music.play().catch(() => {});
+      try {
+        void this.music.play().catch(() => {});
+      } catch {}
     }
   }
   setActive(active: boolean) {
-    if (this.disposed || this.active === active) return;
+    if (this.disposed) return;
     this.active = active;
     if (!active) {
       this.stopEffects();

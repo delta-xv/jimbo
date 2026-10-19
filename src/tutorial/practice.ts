@@ -1,5 +1,6 @@
 import { HANDS } from "../game/config";
 import type { Card } from "../game/types";
+import { readStored, writeStored } from "../storage/storage";
 
 export interface Practice {
   readonly cards: readonly Card[];
@@ -63,13 +64,13 @@ export function practiceReducer(
 export const TUTORIAL_SEEN_KEY = "jimbo:tutorial-seen:v1";
 export function hasSeenTutorial(): boolean {
   try {
-    return window.localStorage.getItem(TUTORIAL_SEEN_KEY) === "yes";
+    return readStored(TUTORIAL_SEEN_KEY) === "yes";
   } catch {
     return false;
   }
 }
 export function markTutorialSeen(): void {
   try {
-    window.localStorage.setItem(TUTORIAL_SEEN_KEY, "yes");
+    writeStored(TUTORIAL_SEEN_KEY, "yes");
   } catch {}
 }

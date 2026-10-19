@@ -64,3 +64,16 @@ npm run apk
 ```
 
 The output is `dist/jimbo-1.0.0-debug.apk`, accompanied by `dist/SHA256SUMS`. This is a debug test build. See the [Android guide (Chinese)](docs/android.md) for toolchain setup, signing, upgrades, system back-button behavior, and emulator checks.
+
+## Build for iOS
+
+Requires macOS and Xcode 26+. Targets iPhone / iOS 16+, with offline resources and native saves.
+
+```sh
+npm run ios:sync
+npm run ios:open
+npm run ios:simulator
+npm run ios:unsigned
+```
+
+The unsigned IPA, checksum, and installation guide are written to `dist/ios/`. To install on your iPhone, select your device and Signing Team in Xcode and run the app. Free Personal Team signing expires after 7 days. Simulator checks passed; signing and physical-device validation are pending.

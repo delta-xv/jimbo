@@ -5,6 +5,8 @@ import { RunOutcome } from "./ui/RunOutcome";
 import { useGameAudio } from "./audio/useGameAudio";
 import { App as NativeApp } from "@capacitor/app";
 import { Capacitor } from "@capacitor/core";
+import { listenForNativeEvents } from "./native/lifecycle";
+import { flushStorage, onStorageError } from "./storage/storage";
 import { loadRun, parseRun, saveRun, serializeRun } from "./save/run";
 import { activeJokers, disabledJoker } from "./game/jokerActivity";
 import { PenaltyIntro } from "./ui/PenaltyIntro";
@@ -139,6 +141,7 @@ export default function App() {
     if (state.phase !== "ready" && !saveRun(state))
       setSaveNotice("unavailable");
   }, [state]);
+  useEffect(() => onStorageError(() => setSaveNotice("unavailable")), []);
   useEffect(() => {
     if (outcome) {
       setModal(null);
@@ -157,24 +160,21 @@ export default function App() {
       setModal(null);
     } else if (busy) return;
     else if (state.phase !== "ready") setModal("restart");
-    else void NativeApp.minimizeApp();
+    else if (Capacitor.getPlatform() === "android")
+      void NativeApp.minimizeApp().catch(() => {});
   };
   useEffect(() => {
-    if (!Capacitor.isNativePlatform()) return;
-    const backListener = NativeApp.addListener("backButton", () =>
-      back.current(),
-    );
-    const pauseListener = NativeApp.addListener(
-      "appStateChange",
-      ({ isActive }) => {
-        if (!isActive && !saveRun(stateRef.current))
-          setSaveNotice("unavailable");
+    return listenForNativeEvents({
+      back: () => back.current(),
+      stateChange: (active) => {
+        if (!active) {
+          if (!saveRun(stateRef.current)) setSaveNotice("unavailable");
+          void flushStorage().then((saved) => {
+            if (!saved) setSaveNotice("unavailable");
+          });
+        }
       },
-    );
-    return () => {
-      void backListener.then((handle) => handle.remove());
-      void pauseListener.then((handle) => handle.remove());
-    };
+    });
   }, []);
   function send(action: Action) {
     if (motion.busy.current || penaltyIntro !== null) return;
@@ -264,6 +264,7 @@ export default function App() {
     <main
       className={`game-shell ${outcome ? "is-outcome" : ""}`}
       onPointerDownCapture={audio.unlock}
+      onClickCapture={audio.unlock}
       onKeyDownCapture={audio.unlock}
       onClick={(event) => {
         const button = (event.target as Element).closest("button");
@@ -295,11 +296,13 @@ export default function App() {
       <audio
         ref={audio.musicRef}
         data-audio="music"
-        src="/audio/theme.ogg"
         loop
         preload="none"
         hidden
-      />
+      >
+        <source src="/audio/theme.m4a" type="audio/mp4" />
+        <source src="/audio/theme.ogg" type={'audio/ogg; codecs="opus"'} />
+      </audio>
       {outcome ? (
         <RunOutcome
           key={`${state.seed}-${outcome}`}

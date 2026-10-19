@@ -64,3 +64,16 @@ npm run apk
 ```
 
 产物位于 `dist/jimbo-1.0.0-debug.apk`，附带 `dist/SHA256SUMS`。这是 debug 测试包。工具链配置、签名与覆盖安装、系统返回键、模拟器验证方式见 [Android 说明](docs/android.md)。
+
+## 自行构建 iOS 应用
+
+需要 macOS 和 Xcode 26+。面向 iPhone / iOS 16+，支持离线资源和原生存档。
+
+```sh
+npm run ios:sync
+npm run ios:open
+npm run ios:simulator
+npm run ios:unsigned
+```
+
+待签名 IPA、校验文件和安装说明位于 `dist/ios/`。在 Xcode 中选择自己的 iPhone 和 Signing Team 后运行安装；免费 Personal Team 签名有效期为 7 天。模拟器检查已通过，签名及真机验收尚未完成。

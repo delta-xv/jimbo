@@ -4,6 +4,7 @@ import {
   validRules,
   type RunRules,
 } from "../game/rules";
+import { readStored, writeStored } from "../storage/storage";
 export type AnimationSpeed = "normal" | "fast" | "instant";
 export interface AudioSettings {
   readonly music: boolean;
@@ -35,7 +36,10 @@ export function defaultSettings(): Settings {
   };
 }
 export function parseSettings(value: unknown): Settings {
-  if (typeof value !== "object" || value === null) return defaultSettings();
+  return validateSettings(value) ?? defaultSettings();
+}
+export function validateSettings(value: unknown): Settings | null {
+  if (typeof value !== "object" || value === null) return null;
   const data = value as Record<string, unknown>;
   let rules = data.rules;
   if (data.version === 1 && typeof rules === "object" && rules !== null) {
@@ -92,7 +96,7 @@ export function parseSettings(value: unknown): Settings {
     typeof data.crt !== "boolean" ||
     !validRules(rules)
   )
-    return defaultSettings();
+    return null;
   const audio =
     typeof data.audio === "object" && data.audio !== null
       ? (data.audio as Record<string, unknown>)
@@ -124,7 +128,7 @@ export function parseSettings(value: unknown): Settings {
 export function loadSettings(): Settings {
   try {
     return parseSettings(
-      JSON.parse(window.localStorage.getItem(SETTINGS_KEY) ?? "null"),
+      JSON.parse(readStored(SETTINGS_KEY) ?? "null"),
     );
   } catch {
     return defaultSettings();
@@ -132,6 +136,6 @@ export function loadSettings(): Settings {
 }
 export function saveSettings(settings: Settings): void {
   try {
-    window.localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
+    writeStored(SETTINGS_KEY, JSON.stringify(settings));
   } catch {}
 }

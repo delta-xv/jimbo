@@ -4,6 +4,7 @@ const config: CapacitorConfig = {
   appName: "Jimbo",
   webDir: "build",
   android: { backgroundColor: "#102e2a" },
+  ios: { backgroundColor: "#102e2a", contentInset: "never" },
   plugins: {
     SystemBars: {
       insetsHandling: "native",

@@ -21,6 +21,8 @@ soundtrack by LouisF and transcription by MrCrimit.
 https://louisfmusic.com/
 https://musescore.com/user/8237321/scores/14590660
 main_theme.xm rendered to stereo audio and encoded as Ogg Opus for Jimbo.
+Jimbo also transcodes the Ogg file to 128 kbps AAC in an M4A container
+for WebKit compatibility. The arrangement and musical content are unchanged.
 The upstream does not state a separate redistribution license for the theme.
 All rights to the original composition remain with their respective holders.
 The source project is a non-profit fan demake and states that it is not to be sold.
